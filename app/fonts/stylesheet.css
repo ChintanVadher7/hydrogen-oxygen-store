@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "ITC Garamond Std Lt Cond";
+    src: url("../fonts/ITCGaramondStd-LtCondIta.eot");
+    src: url("../fonts/ITCGaramondStd-LtCondIta.eot?#iefix") format("embedded-opentype"), url("../fonts/ITCGaramondStd-LtCondIta.woff2") format("woff2"), url("../fonts/ITCGaramondStd-LtCondIta.woff") format("woff"), url("../fonts/ITCGaramondStd-LtCondIta.ttf") format("truetype"), url("../fonts/ITCGaramondStd-LtCondIta.svg#ITCGaramondStd-LtCondIta") format("svg");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ITC Garamond Std Lt Cond";
+    src: url("../fonts/ITCGaramondStd-LtCond.eot");
+    src: url("../fonts/ITCGaramondStd-LtCond.eot?#iefix") format("embedded-opentype"), url("../fonts/ITCGaramondStd-LtCond.woff2") format("woff2"), url("../fonts/ITCGaramondStd-LtCond.woff") format("woff"), url("../fonts/ITCGaramondStd-LtCond.ttf") format("truetype"), url("../fonts/ITCGaramondStd-LtCond.svg#ITCGaramondStd-LtCond") format("svg");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Relative Faux Pro Book";
+    src: url("../fonts/RelativeFauxPro-Book.eot");
+    src: url("../fonts/RelativeFauxPro-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/RelativeFauxPro-Book.woff2") format("woff2"), url("../fonts/RelativeFauxPro-Book.woff") format("woff"), url("../fonts/RelativeFauxPro-Book.ttf") format("truetype"), url("../fonts/RelativeFauxPro-Book.svg#RelativeFauxPro-Book") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

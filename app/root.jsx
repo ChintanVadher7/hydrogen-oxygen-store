@@ -1,5 +1,5 @@
 import {useNonce} from '@shopify/hydrogen';
-import {defer} from '@shopify/remix-oxygen';
+import {defer, json} from '@shopify/remix-oxygen';
 import {
   Links,
   Meta,
@@ -14,7 +14,11 @@ import {
 import favicon from './assets/favicon.svg';
 import resetStyles from './styles/reset.css?url';
 import appStyles from './styles/app.css?url';
+import tailwind from './styles/tailwind.css?url';
+import customCss from './styles/custom.css?url';
 import {Layout} from '~/components/Layout';
+import client from './models/contentful.server';
+
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -38,6 +42,8 @@ export function links() {
   return [
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
+    {rel: 'stylesheet', href: tailwind},
+    {rel: 'stylesheet', href: customCss},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
@@ -65,6 +71,8 @@ export const useRootLoaderData = () => {
 export async function loader({context}) {
   const {storefront, customerAccount, cart} = context;
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
+  const headerItems = await client.HederItems();
+
 
   const isLoggedInPromise = customerAccount.isLoggedIn();
   const cartPromise = cart.get();
@@ -92,10 +100,13 @@ export async function loader({context}) {
       header: await headerPromise,
       isLoggedIn: isLoggedInPromise,
       publicStoreDomain,
+      headerItems
     },
     {
       headers: {
         'Set-Cookie': await context.session.commit(),
+        'Content-Security-Policy': "default-src 'self' https: ; script-src 'self' ; object-src 'none'"
+
       },
     },
   );
@@ -105,17 +116,18 @@ export default function App() {
   const nonce = useNonce();
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
-
+  const {headerItems} = useLoaderData();
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
+        <meta charSet="utf-8" 
+        content="img-src 'self' https://images.ctfassets.net/teq1jkftfc1r/5oZ693LBs8CuUO7njylgb6/a511677a1ab7856d30dd984371b3579e/banner-img.jpg" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body>
-        <Layout {...data}>
+        <Layout {...data} >
           <Outlet />
         </Layout>
         <ScrollRestoration nonce={nonce} />
@@ -236,6 +248,3 @@ const FOOTER_QUERY = `#graphql
   ${MENU_FRAGMENT}
 `;
 
-/** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
-/** @typedef {import('@remix-run/react').ShouldRevalidateFunction} ShouldRevalidateFunction */
-/** @typedef {import('@shopify/remix-oxygen').SerializeFrom<typeof loader>} LoaderReturnData */
