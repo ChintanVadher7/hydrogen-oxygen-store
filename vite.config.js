@@ -3,12 +3,14 @@ import { installGlobals } from "@remix-run/node";
 import { hydrogen } from '@shopify/hydrogen/vite';
 import { oxygen } from '@shopify/mini-oxygen/vite';
 import { vitePlugin as remix } from '@remix-run/dev';
+import { vercelPreset } from '@vercel/remix/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 installGlobals();
 
 export default defineConfig({
   plugins: [
+    vercelPreset(), 
     hydrogen(),
     oxygen(),
     remix({
