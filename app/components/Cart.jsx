@@ -122,9 +122,9 @@ function CartCheckoutActions({checkoutUrl}) {
 
   return (
     <div>
-      <a href={checkoutUrl} target="_self">
+      <Link to={checkoutUrl} target="_self">
         <p>Continue to Checkout &rarr;</p>
-      </a>
+      </Link>
       <br />
     </div>
   );

@@ -2,6 +2,11 @@ import { Await, Link, NavLink } from '@remix-run/react';
 import { Fragment, Suspense } from 'react';
 import { useRootLoaderData } from '~/root';
 import { IoCart } from "react-icons/io5";
+import searchIcon from '../assets/images/search.svg'
+import calenderIcon from '../assets/images/celender.svg'
+import headerLogo from '../assets/images/header-logo.svg'
+import peopleIcon from '../assets/images/people.svg'
+
 
 // import HeaderCustom from './HeaderCustom';
 
@@ -19,25 +24,25 @@ export function Header({ header, isLoggedIn, cart, headerItems }) {
       <div className="container-fluid w-full pt-[30px] pb-[16px]">
         <div className="header-bottom flex flex-wrap justify-between xl:items-stretch xlscreen:items-center w-full relative py-30 lg:pb-16">
           <div className="cat-btn flex-wrap gap-[30px] hidden smscreen2:flex">
-            <a href="#" className="btn-search ">
-              <img src="/app/assets/images/search.svg" height="16" width="16" alt="search" />
-            </a>
+            <Link to={'/'} className="btn-search ">
+              <img src={searchIcon} height="16" width="16" alt="search" />
+            </Link>
           </div>
           <div className="navbar">
             <div className="mobile-menu-main smscreen2:hidden">
               <ul className="flex flex-wrap items-center my-0 gap-10 lgscreen:gap-7 xl:h-full ">
                 <li>
-                  <Link href="#">
+                  <Link to={'/'}>
                     Shop aura
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link to={'/'}>
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link to={'/'}>
                     Our Blog
                   </Link>
                 </li>
@@ -46,18 +51,18 @@ export function Header({ header, isLoggedIn, cart, headerItems }) {
           </div>
           <div className="logo xl:flex xl:justify-center lgscreen:max-w-[90px]">
             <Link to={'/'}>
-              <img src="/app/assets/images/header-logo.svg" width="80" height="33" alt="logo" />
+              <img src={headerLogo} width="80" height="33" alt="logo" />
             </Link>
           </div>
           <div className="cat-btn flex flex-wrap gap-[40px] smscreen2:gap-[20px] ml-30">
             <Link onClick={openCart} to={'/#cart-aside'} className="btn-search smscreen2:hidden">
-              <img src="/app/assets/images/search.svg" height="16" width="16" alt="search" />
+              <img src={searchIcon} height="16" width="16" alt="search" />
             </Link>
-            <Link href="/#assasd" className="calnder">
-              <img src="/app/assets/images/celender.svg" height="16" width="16" alt="search" />
+            <Link to={'/'} className="calnder">
+              <img src={calenderIcon} height="16" width="16" alt="search" />
             </Link>
-            <Link href="#" className="people-icon">
-              <img src="/app/assets/images/people.svg" height="16" width="16" alt="search" />
+            <Link to={'/'} className="people-icon">
+              <img src={peopleIcon} height="16" width="16" alt="search" />
             </Link>
           </div>
         </div>
@@ -135,21 +140,21 @@ function HeaderCtas({ isLoggedIn, cart }) {
 
 function HeaderMenuMobileToggle() {
   return (
-    <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
+    <Link className="header-menu-mobile-toggle" to={"#mobile-menu-aside"}>
       <h3>☰</h3>
-    </a>
+    </Link>
   );
 }
 
 function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
+  return <Link to={"#search-aside"}>Search</Link>;
 }
 
 /**
  * @param {{count: number}}
  */
 function CartBadge({ count }) {
-  return <a href="#cart-aside">Cart {count}</a>;
+  return <Link to={"#cart-aside"}>Cart {count}</Link>;
 }
 
 /**

@@ -15,6 +15,7 @@
   "dependencies": {
     "@apollo/client": "^3.9.11",
     "@contentful/rich-text-react-renderer": "^15.19.6",
+    "@remix-run/cloudflare": "^2.8.1",
     "@remix-run/react": "^2.8.0",
     "@remix-run/server-runtime": "^2.8.0",
     "@shopify/cli": "3.58.0",

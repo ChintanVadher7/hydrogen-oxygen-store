@@ -1,9 +1,9 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Link } from '@remix-run/react';
 
 const HomepageHero = ({ homepageContent }) => {
-    console.log(homepageContent, 444)
     return (
         <div className='banner-swiper h-[950px] lgscreen:h-[600px] '>
             <Swiper speed={2500} className='h-full' slidesPerView={1}>
@@ -33,9 +33,9 @@ const HomepageHero = ({ homepageContent }) => {
 
                             </div>
                             <div className="btn-custom mt-[28px]">
-                                <a href="javscript:void(0);" className="btn btn-transparent">
+                                <Link to={'/'} className="btn btn-transparent">
                                     Shop aura
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </SwiperSlide>

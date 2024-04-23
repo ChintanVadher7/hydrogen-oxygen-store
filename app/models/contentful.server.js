@@ -71,7 +71,6 @@ async function getTalks() {
     }`;
     const response = await apiCall(query);
     const json = await response.json();
-    console.log(json)
     return await json.data.homepageCollection.items[0]
 }
 

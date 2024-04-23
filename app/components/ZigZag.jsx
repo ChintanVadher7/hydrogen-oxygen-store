@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react'
 import React from 'react'
 
 const ZigZag = ({ content }) => {
@@ -22,9 +23,9 @@ const ZigZag = ({ content }) => {
                   Packed with both Ayurvedic and clinically-researched ingredients, our Gulabi face mask exfoliates congested, dull skin and soothes it at the very same time. </p>
               </div>
               <div className="btn-custom mt-20">
-                <a href="javscrip:void(0);" className="btn btn-black btn-transparent">
+                <Link to={'/'} className="btn btn-black btn-transparent">
                   Shop Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>

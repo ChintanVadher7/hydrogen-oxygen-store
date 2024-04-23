@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { Link } from '@remix-run/react';
 
 const BlogCard = ({ content }) => {
     return (
@@ -32,9 +33,9 @@ const BlogCard = ({ content }) => {
                                     <SwiperSlide key={index}>
                                         <div style={{ width: '347px', marginRight: '40px' }}>
                                             <div className="flex flex-col gap-[20px] card items-center justify-center">
-                                                <a href="javscript:void(0); " className="img portrait">
+                                                <Link to={'/'} className="img portrait">
                                                     <img src={res.cardImage.url} height="550" width="424" alt="blog-1" className="h-auto w-full" />
-                                                </a>
+                                                </Link>
                                                 <div className="card-detail">
                                                     <div className="title title-black title-relative">
                                                         <h5>

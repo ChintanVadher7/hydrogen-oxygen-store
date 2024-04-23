@@ -1,5 +1,16 @@
 import {Link, NavLink} from '@remix-run/react';
 import {useRootLoaderData} from '~/root';
+import footterImg from '../assets/images/footer-img.jpg'
+import rightArrow from '../assets/images/right-arrow.svg'
+import footerLogo from '../assets/images/footer-logo.svg'
+import instaIcon from '../assets/images/insta.svg'
+import tiktakIcon from '../assets/images/tiktak.svg'
+import facebookIcon from '../assets/images/facebook.svg'
+import yelpIcon from '../assets/images/yelp.svg'
+import ytbIcon from '../assets/images/you-tube.svg'
+import linkdinIcon from '../assets/images/linkdin.svg'
+import twitterIcon from '../assets/images/twitter.svg'
+
 
 
 export function Footer({menu, shop}) {
@@ -14,13 +25,13 @@ export function Footer({menu, shop}) {
                                 <h5>
                                     Join Us On Instagram @Withaura
                                 </h5>
-                                <a href="javscript:void(0);">
-                                    <img src="/app/assets/images/right-arrow.svg" alt="arrow"/>
-                                </a>
+                                <Link to={'/'}>
+                                    <img src={rightArrow} alt="arrow"/>
+                                </Link>
                             </div>
                         </div>
                         <div className="footer-img">
-                            <img src="/app/assets/images/footer-img.jpg" height="600" width="600" alt="footer-img" className="h-auto w-full"/>
+                            <img src={footterImg} height="600" width="600" alt="footer-img" className="h-auto w-full"/>
                         </div>
                     </div>
                     <div className="lg:w-6/12 w-full relative lgscreen:py-[55px]">
@@ -38,12 +49,10 @@ export function Footer({menu, shop}) {
                                 <div className="content ">
                                     <p>
                                         By signing up you agree to our
-                                        <a href="javscript:void(0):">
-                                            Terms of Use
-                                        </a> and
-                                        <a href="javscript:void(0):">
+                                        <Link to={'/'}>Terms of Use </Link> and
+                                        <Link to={'/'}>
                                             Privacy Policy
-                                        </a>
+                                        </Link>
                                     </p>
                                 </div>
                             </div>
@@ -98,15 +107,15 @@ export function Footer({menu, shop}) {
                                             </Link>
                                         </li>
                                         <div className="footer-logo hidden smscreen2:block pr-10 mt-[40px]">
-                                            <a href="#">
-                                                <img src="/app/assets/images/footer-logo.svg" height="200" width="150" alt="footer-logo" className="max-w-[75px] h-[100px]"/>
-                                            </a>
+                                            <Link to={'/'}>
+                                                <img src={footerLogo} height="200" width="150" alt="footer-logo" className="max-w-[75px] h-[100px]"/>
+                                            </Link>
                                         </div>
                                     </ul>
                                     <div className="footer-logo smscreen2:hidden">
-                                        <a href="#">
-                                            <img src="/app/assets/images/footer-logo.svg" height="200" width="150" alt="footer-logo"/>
-                                        </a>
+                                        <Link to={'/'}>
+                                            <img src={footerLogo} height="200" width="150" alt="footer-logo"/>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -125,27 +134,27 @@ export function Footer({menu, shop}) {
                     </div>
                     <div className="social-media">
                         <div className="flex gap-x-[20px] items-center">
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/insta.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/facebook.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/tiktak.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/twitter.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/yelp.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/you-tube.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
-                            <a href="#" className="social-icon">
-                                <img src="/app/assets/images/linkdin.svg" height="20" width="20" alt="social-icon"/>
-                            </a>
+                            <Link to={'/'} className="social-icon">
+                                <img src={instaIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={facebookIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={tiktakIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={twitterIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={yelpIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={ytbIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
+                            <Link to={'/'} className="social-icon">
+                                <img src={linkdinIcon} height="20" width="20" alt="social-icon"/>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -172,9 +181,9 @@ function FooterMenu({menu, primaryDomainUrl}) {
             : item.url;
         const isExternal = !url.startsWith('/');
         return isExternal ? (
-          <a href={url} key={item.id} rel="noopener noreferrer" target="_blank">
+          <Link to={url} key={item.id} rel="noopener noreferrer" target="_blank">
             {item.title}
-          </a>
+          </Link>
         ) : (
           <NavLink
             end

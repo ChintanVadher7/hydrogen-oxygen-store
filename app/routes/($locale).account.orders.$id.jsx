@@ -1,5 +1,5 @@
 import {json, redirect} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
+import {Link, useLoaderData} from '@remix-run/react';
 import {Money, Image, flattenConnection} from '@shopify/hydrogen';
 import {CUSTOMER_ORDER_QUERY} from '~/graphql/customer-account/CustomerOrderQuery';
 
@@ -172,9 +172,9 @@ export default function OrderRoute() {
       </div>
       <br />
       <p>
-        <a target="_blank" href={order.statusPageUrl} rel="noreferrer">
+        <Link target="_blank" to={order.statusPageUrl} rel="noreferrer">
           View Order Status →
-        </a>
+        </Link>
       </p>
     </div>
   );

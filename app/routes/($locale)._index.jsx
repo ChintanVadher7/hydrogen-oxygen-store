@@ -68,7 +68,6 @@ function FeaturedCollection({ collection }) {
 }
 
 function AddToCartButton({ analytics, children, disabled, lines, onClick }) {
-  console.log(lines, 111)
   return (
     <CartForm
       route="/cart"
