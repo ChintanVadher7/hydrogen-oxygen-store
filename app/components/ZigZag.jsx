@@ -23,7 +23,7 @@ const ZigZag = ({ content }) => {
                   Packed with both Ayurvedic and clinically-researched ingredients, our Gulabi face mask exfoliates congested, dull skin and soothes it at the very same time. </p>
               </div>
               <div className="btn-custom mt-20">
-                <Link to={'/'} className="btn btn-black btn-transparent">
+                <Link style={{border:'1px solid black'}} to={'/'} className="btn btn-black btn-transparent">
                   Shop Now
                 </Link>
               </div>

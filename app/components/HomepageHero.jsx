@@ -33,7 +33,7 @@ const HomepageHero = ({ homepageContent }) => {
 
                             </div>
                             <div className="btn-custom mt-[28px]">
-                                <Link to={'/'} className="btn btn-transparent">
+                                <Link to={'/'} style={{color:'white'}} className="btn btn-transparent text-black">
                                     Shop aura
                                 </Link>
                             </div>

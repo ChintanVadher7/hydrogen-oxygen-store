@@ -44,7 +44,7 @@ export function Footer({menu, shop}) {
                                 </div>
                                 <div className="subscribe__form flex flex-wrap justify-center lgscreen:flex-col gap-[20px] mb-[20px] last:mb-0">
                                     <input type="email" placeholder="Enter address" className="bg-transparent placeholder:text-Black border-0 border-b-Black border-solid border-b-1 w-[434px] xsscreen2:w-[298px] min_width_768:w-[600px] placeholder:text-black"/>
-                                    <button className="subscribe__btn btn btn-black btn-transparent ">Subscribe</button>
+                                    <button style={{border:'1px solid black'}} className="subscribe__btn btn btn-black btn-transparent ">Subscribe</button>
                                 </div>
                                 <div className="content ">
                                     <p>
