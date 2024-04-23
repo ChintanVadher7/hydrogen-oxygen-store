@@ -5,12 +5,16 @@
     "module": "ES2022",
     "moduleResolution": "Bundler",
     "baseUrl": ".",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "~/*": [
         "app/*"
       ]
     }
   },
+  "noEmit": true,
   "include": [
     "./**/*.d.ts",
     "./**/*.js",

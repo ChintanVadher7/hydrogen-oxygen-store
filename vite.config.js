@@ -1,7 +1,7 @@
-import {defineConfig} from 'vite';
-import {hydrogen} from '@shopify/hydrogen/vite';
-import {oxygen} from '@shopify/mini-oxygen/vite';
-import {vitePlugin as remix} from '@remix-run/dev';
+import { defineConfig } from 'vite';
+import { hydrogen } from '@shopify/hydrogen/vite';
+import { oxygen } from '@shopify/mini-oxygen/vite';
+import { vitePlugin as remix } from '@remix-run/dev';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
@@ -10,6 +10,7 @@ export default defineConfig({
     oxygen(),
     remix({
       presets: [hydrogen.preset()],
+      ignoredRouteFiles: ["**/.*", "**/*.css", "**/*.scss", "**/*.css.map"],
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
